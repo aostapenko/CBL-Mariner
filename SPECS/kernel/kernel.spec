@@ -1,6 +1,10 @@
 %global security_hardening none
 %global sha512hmac bash %{_sourcedir}/sha512hmac-openssl.sh
 %define uname_r %{version}-%{release}
+# Temporarily disable ARM64 debuginfo due to lockup during build
+%ifarch aarch64
+%define debug_package %{nil}
+%else
 Summary:        Linux Kernel
 Name:           kernel
 Version:        5.10.78.1
