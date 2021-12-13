@@ -4,7 +4,7 @@
 # Temporarily disable ARM64 debuginfo due to lockup during build
 %ifarch aarch64
 %define debug_package %{nil}
-%else
+%endif
 Summary:        Linux Kernel
 Name:           kernel
 Version:        5.10.78.1
